@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>mysql学习笔记-3 | Amour的个人博客</title>
+  <title>mysql学习笔记-2 | Amour的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="mysql学习笔记-3">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;06&#x2F;08&#x2F;mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3&#x2F;index.html">
+  <meta name="description" content="基础知识部分">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mysql学习笔记-2">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;18&#x2F;mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2&#x2F;index.html">
 <meta property="og:site_name" content="Amour的个人博客">
+<meta property="og:description" content="基础知识部分">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-08T01:29:38.358Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;18&#x2F;mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2&#x2F;1.png">
+<meta property="og:updated_time" content="2020-06-08T02:02:30.728Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;18&#x2F;mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2&#x2F;1.png">
   
     <link rel="alternative" href="/atom.xml" title="Amour的个人博客" type="application/atom+xml">
   
@@ -159,27 +163,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-mysql学习笔记-3" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-mysql学习笔记-2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      mysql学习笔记-3
+      mysql学习笔记-2
     </h1>
   
 
         
-        <a href="/2020/06/08/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3/" class="archive-article-date">
-  	<time datetime="2020-06-08T01:29:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-08</time>
+        <a href="/2020/02/18/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/" class="archive-article-date">
+  	<time datetime="2020-02-18T01:58:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="基础知识部分"><a href="#基础知识部分" class="headerlink" title="基础知识部分"></a>基础知识部分</h1><a id="more"></a>
+<hr>
+<h2 id="1-数据库的四大特征-事务的四大特征-是什么？什么是事务？隔离性指什么？原子性指什么？"><a href="#1-数据库的四大特征-事务的四大特征-是什么？什么是事务？隔离性指什么？原子性指什么？" class="headerlink" title="1. 数据库的四大特征(事务的四大特征)是什么？什么是事务？隔离性指什么？原子性指什么？"></a>1. 数据库的四大特征(事务的四大特征)是什么？什么是事务？隔离性指什么？原子性指什么？</h2><p>1）事务的四大特性ACID：原子性、一致性、隔离性、持久性。</p>
+<p>2）事务：一系列操作序列构成的执行单元，这些单元要么都做，要么都不做，是一个不可分割的工作单元。</p>
+<p>3）解释:原子性、一致性、分离性、持久性。<br>a）原子性是指：事务中包含的所有操作要么全做，要么回滚全部不做。<br>b）一致性：事务执行前后数据库都必须处于一致性状态。比如事务执行前是处于一范式，执行事务后也必须是一范式不能处于二范式。<br>c）隔离性：系统必须保证事务不受其他并发执行的事务的影响。即一个事务内部的操作及正在操作的数据必须封锁起来，不被其它企图进行修改的事务看到。<br>d）持久性：类似于持久化，一个事务一旦成功完成，它对数据库的改变必须是永久的，即使是在系统遇到故障的情况下也不会丢失。</p>
+<h2 id="2-事务的隔离级别"><a href="#2-事务的隔离级别" class="headerlink" title="2.    事务的隔离级别"></a>2.    事务的隔离级别</h2><p>&emsp;&emsp;SQL定义了四种隔离级别，用来限定事务内哪些数据是可见的。低级别的隔离级别拥有更高的并发性，系统开销也更加小，但是随之而来的就是带来的数据安全性问题。</p>
+<p>（1）Read Uncommitted（未提交读）<br>&emsp;&emsp;在该隔离级别，所有事务都可以看到其他未提交事务的执行结果。读取未提交的数据，也被称之为脏读（Dirty Read）。该级别用的很少。</p>
+<p>（2）Read Committed（提交读）<br>&emsp;&emsp;这是大多数数据库系统的默认隔离级别（但不是MySQL默认的）。它满足了隔离的简单定义：一个事务只能看见已经提交事务所做的改变，换句话说就是事务提交之前对其余事务不可见。这种隔离级别也支持不可重复读（Nonrepeatable Read），因为同一事务的其他实例在该实例处理其间可能会有新的commit，所以同一select查询可能返回不同结果。</p>
+<p>（3）Repeatable Read（可重复读）<br>&emsp;&emsp;这是MySQL的默认事务隔离级别，它确保同一事务的多个实例在并发读取数据时，会看到同样的数据行。不过理论上，这会导致另一个棘手的问题：幻读 （Phantom Read）。简单的说，幻读指当用户读取某一范围的数据行时，另一个事务又在该范围内插入了新行，当用户再读取该范围的数据行时，会发现有新的“幻影” 行。InnoDB和Falcon存储引擎通过多版本并发控制（MVCC，Multiversion Concurrency Control）机制解决了该问题。</p>
+<p>（4）Serializable（可串行化）<br>&emsp;&emsp;这是最高的隔离级别，它强制所有事务都是串行执行的，使之不可能相互冲突，从而解决幻读问题。换言之，它是在每个读的数据行上加上共享锁。在这个级别，可能导致大量的超时现象和锁竞争。</p>
+<p>MySQL中实现这四种隔离界别可能产生的问题如下：<br><img src="/2020/02/18/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/1.png" alt="隔离级别与对应的问题"> </p>
+<h2 id="3-存储引擎MyISAM与InnoDB基本区别"><a href="#3-存储引擎MyISAM与InnoDB基本区别" class="headerlink" title="3.  存储引擎MyISAM与InnoDB基本区别"></a>3.  存储引擎MyISAM与InnoDB基本区别</h2><p>（1）MyISAM类型不支持事务处理等高级处理，而InnoDB类型支持事务。</p>
+<p>（2）InnoDB支持数据行锁定；MyISAM不支持行锁定，只支持锁定整个表。这里需要注意的是InnoDB表的行锁也不是绝对的，假如在执行一个SQL语句时MySQL不能确定要扫描的范围，InnoDB表同样会锁全表，例如update table set num=1 where name like “%aaa%”</p>
+<p>（3）InnoDB支持外键，MyISAM不支持。</p>
+<p>（4）InnoDB 中不保存表的具体行数，也就是说，执行select count() from table时，InnoDB要扫描一遍整个表来计算有多少行。但是MyISAM只要简单的读出保存好的行数即可。注意的是，当count()语句包含 where条件时，两种表的操作是一样的。</p>
+<h2 id="4-什么是数据库的第三范式"><a href="#4-什么是数据库的第三范式" class="headerlink" title="4. 什么是数据库的第三范式"></a>4. 什么是数据库的第三范式</h2><p>1）第一范式：列不可分，即列的原子性，列不能够再分成其他几列。</p>
+<p>2）第二范式：不能产生部分依赖，即表必须有一个主键，没有包含在主键中的列必须完全依赖于主键，而不能只依赖于主键的一部分。</p>
+<p>3）    第三范式：不能传递依赖，即非主键列必须直接依赖于主键，不能依赖于非主键。</p>
+<h2 id="5-MySQL中的视图"><a href="#5-MySQL中的视图" class="headerlink" title="5. MySQL中的视图"></a>5. MySQL中的视图</h2><p>1）视图定义：<br>视图是对若干张基本表的引用，本质上是一张虚表，获取查询的结果，但是不存储具体的数据(更改基本表的数据，视图也会跟着改变)。通俗的讲，视图就是一条SELECT语句执行后返回的结果集。所以我们在创建视图的时候，主要的工作就落在创建这条SQL查询语句上。</p>
+<p>2）视图的作用<br>1）合并和分割数据：方便操作，特别是查询操作，减少复杂的SQL语句，增强可读性；<br>2）更加安全，数据库授权命令不能限定到特定行和特定列，但是通过合理创建视图，可以把权限限定到行列级别。</p>
+<p>3）应用场景：<br>1）    权限控制的时候，不希望用户访问表中某些含敏感信息的列，比如salary…<br>2）关键信息来源于多个复杂关联表，可以创建视图提取我们需要的信息，简化操作；</p>
+
       
 
       
@@ -258,7 +283,7 @@
     <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/06/08/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-3/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/18/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -272,9 +297,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/02/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-1/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          计算机网络相关-part1
+        
+      </div>
+    </a>
   
-    <a href="/2020/06/08/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">mysql学习笔记-2</div>
+  
+    <a href="/2020/02/16/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mysql学习笔记-1</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -301,7 +335,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础知识部分"><span class="toc-number">1.</span> <span class="toc-text">基础知识部分</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-数据库的四大特征-事务的四大特征-是什么？什么是事务？隔离性指什么？原子性指什么？"><span class="toc-number">1.1.</span> <span class="toc-text">1. 数据库的四大特征(事务的四大特征)是什么？什么是事务？隔离性指什么？原子性指什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-事务的隔离级别"><span class="toc-number">1.2.</span> <span class="toc-text">2.    事务的隔离级别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-存储引擎MyISAM与InnoDB基本区别"><span class="toc-number">1.3.</span> <span class="toc-text">3.  存储引擎MyISAM与InnoDB基本区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-什么是数据库的第三范式"><span class="toc-number">1.4.</span> <span class="toc-text">4. 什么是数据库的第三范式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-MySQL中的视图"><span class="toc-number">1.5.</span> <span class="toc-text">5. MySQL中的视图</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
