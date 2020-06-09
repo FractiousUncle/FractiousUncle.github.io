@@ -6,16 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>计算机网络相关-part1 | Amour的个人博客</title>
+  <title>Archives: 2020/6 | Amour的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基础知识-1">
-<meta property="og:type" content="article">
-<meta property="og:title" content="计算机网络相关-part1">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;19&#x2F;%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-1&#x2F;index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Amour的个人博客">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;archives&#x2F;2020&#x2F;06&#x2F;index.html">
 <meta property="og:site_name" content="Amour的个人博客">
-<meta property="og:description" content="基础知识-1">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-08T02:02:59.440Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Amour的个人博客" type="application/atom+xml">
@@ -161,205 +158,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-计算机网络基础知识-1" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      计算机网络相关-part1
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/06/09/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2020-06-09T10:37:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-09</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/06/09/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/">进程与线程</a>
     </h1>
   
 
-        
-        <a href="/2020/02/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-1/" class="archive-article-date">
-  	<time datetime="2020-02-19T01:58:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="基础知识-1"><a href="#基础知识-1" class="headerlink" title="基础知识-1"></a>基础知识-1</h1><a id="more"></a>
-<hr>
-<h2 id="1-TCP的三次握手、四次挥手的过程"><a href="#1-TCP的三次握手、四次挥手的过程" class="headerlink" title="1.    TCP的三次握手、四次挥手的过程"></a>1.    TCP的三次握手、四次挥手的过程</h2><ol>
-<li>连接的三次握手<br>1）    客户端发送SYN信号，表示告诉服务器，我要建立连接<br>2）    服务器返回ACK=1和SYN=1给客户端，表示我已经接收到了客户端的请求，并接收了请求。<br>3）    客户端收到来自服务端响应后，知道服务端已经接受连接请求，再次发送ACK给服务器，确认服务端的SYN，其实也就是一个确认的再确认。</li>
-<li>终止的四次挥手：客户端和服务端均可主动发起挥手操作终止连接<br>1）    主动方A发送一个FIN(终止信号)给被动方B，表示要终结主动方A到被动方B的连接；<br>2）    被动方B收到了FIN信号，返回ACK信号给主动方，表示从主动方到被动方的连接关闭了，也就是主动方不能再发送数据给被动方。<br>3）    被动方B在发送完数据后，给主动方A发送一个FIN信号，请求要终结被动方B到主动方A的连接；<br>4）    主动方A收到了FIN信号，返回ACK信号给被动方B，表示从被动方B到主动方A的连接关闭了，也就是被动方不能再发送数据给主动方。</li>
-</ol>
-<h2 id="2-TCP传输为什么是可靠的？"><a href="#2-TCP传输为什么是可靠的？" class="headerlink" title="2. TCP传输为什么是可靠的？"></a>2. TCP传输为什么是可靠的？</h2><p>1）TCP将数据截取为合理的长度：TCP将应用数据分割成认为最适合发送的数据块。UDP完全不同，在UDP中应用程序产生的数据报长度将保持不变。 </p>
-<p>2）TCP的超时重发机制：TCP发出数据流之后会等待接收方发出响应确认信号，如果发送方不能及时收到确认信号会重新再次发送数据报。</p>
-<p>3）对于收到的请求，给出确认响应：当TCP收到发自TCP连接另一端的数据，它将发送一个确认。这个确认不是立即发送，通常将推迟几分之一秒 。</p>
-<p>4）TCP会校验数据报，如果检测出包有错，就丢弃报文段，不给出响应。</p>
-<p>5）对失效数据进行重排序然后才交给应用层：既然TCP报文段作为IP数据报来传输，而IP数据报的到达可能会失序，因此TCP报文段的到达也可能会失序。如果必要，TCP将对收到的数据进行重新排序，将收到的数据以正确的顺序交给应用层。</p>
-<p>6）对于重复数据，能够丢弃重复数据：既然IP数据报会发生重复，TCP的接收端必须丢弃重复的数据。</p>
-<p>7）TCP还能提供流量控制，防止较快主机导致较慢主机的缓冲区溢出：TCP连接的每一方都有固定大小的缓冲空间。TCP的接收端只允许另一端发送接收端缓冲区所能接纳的数据。这将防止较快主机致使较慢主机的缓冲区溢出。</p>
-<p>TCP使用的流量控制协议是：可变大小的滑动窗口协议。</p>
-<h2 id="3-为什么TCP建立连接是三次，而断开连接要四次？"><a href="#3-为什么TCP建立连接是三次，而断开连接要四次？" class="headerlink" title="3. 为什么TCP建立连接是三次，而断开连接要四次？"></a>3. 为什么TCP建立连接是三次，而断开连接要四次？</h2><p>1）连接是三次的原因<br>    为了防止失效的链接请求报文段突然又传送到主机B，因而产生错误。失效的连接请求报文段是指：主机 A 发出的连接请求没有收到主机 B 的确认，于是经过一段时间后，主机 A 又重新向主机 B 发送连接请求，且建立成功，顺序完成数据传输。考虑这样一种特殊情况，主机 A 第一次发送的连接请求并没有丢失，而是因为网络节点导致延迟达到主机 B ，主机 B 以为是主机 A 又发起的新连接，于是主机 B 同意连接，并向主机 A 发回确认，但是此时主机 A 根本不会理会，主机 B 就一直在等待主机 A 发送数据，导致主机 B 的资源浪费</p>
-<p>2）断开是四次的原因<br>    这是由于TCP的半关闭造成的，由于TCP 是全双工的，表示可以同时在两个方向上即可以接收数据也可以发送数据。所以我们关闭连接必须在每个方向上面单独关闭，这个单方向的关闭就叫半关闭。所以挥手时其实就是2次断开连接，所以是四次。</p>
-<h2 id="4-TCP和UDP的区别"><a href="#4-TCP和UDP的区别" class="headerlink" title="4.    TCP和UDP的区别"></a>4.    TCP和UDP的区别</h2><p>1）TCP和UDP都是传输层的协议。<br>2）TCP：面向连接、传输可靠(保证数据正确性,保证数据顺序)、用于一次传输大量数据(流模式)、速度慢，建立连接需要开销较多(时间，系统资源)。比如FTP、SMTP之类<br>3）UDP：面向非连接、传输不可靠、用于一次传输少量数据(数据包模式)、速度快。比如QQ。</p>
-<h2 id="5-TCP-IP的分层模型以及网络层和运输层的主要作用："><a href="#5-TCP-IP的分层模型以及网络层和运输层的主要作用：" class="headerlink" title="5. TCP/IP的分层模型以及网络层和运输层的主要作用："></a>5. TCP/IP的分层模型以及网络层和运输层的主要作用：</h2><p><strong>应用层</strong>：负责处理特定的应用程序；<br><strong>传输层</strong>：负责提供端到端的通信(不同应用程序到不同应用程序，这里限制了端口号，很容易理解，我们使用TCP时都是限定了IP+端口号的)；<br><strong>网络层(IP层)</strong>：主要是路由选择与转发；</p>
-<h2 id="6-TCP-IP的分层模型是哪几层？http协议对应的哪一层？传输层的上面-一层是什么？"><a href="#6-TCP-IP的分层模型是哪几层？http协议对应的哪一层？传输层的上面-一层是什么？" class="headerlink" title="6. TCP/IP的分层模型是哪几层？http协议对应的哪一层？传输层的上面 一层是什么？"></a>6. TCP/IP的分层模型是哪几层？http协议对应的哪一层？传输层的上面 一层是什么？</h2><p>1）    TCP/IP分为四层：应用层、传输层、网络层IP、网络接口层。<br>2）    http属于应用层；<br>应用层：FTP（文本传输）、Http、WWW、SMTP（邮件）等等<br>传输层：TCP、UDP；<br>网络层IP：IP、ARP（地址解析协议）、ICMP（Internet控制报文协议）；<br>网络接口层。<br>3）    传输层上面是应用层。    </p>
-<h2 id="7-TCP-IP协议栈"><a href="#7-TCP-IP协议栈" class="headerlink" title="7. TCP/IP协议栈"></a>7. TCP/IP协议栈</h2><p>（1）网络接口层<br>　　TCP/IP协议模型的基层，负责数据帧的发送和接收。对应OSI模型中的物理层和数据链路层，是TCP/IP的最底层，不过通常在描述TCP/IP模型时还是会划分具体为物理层(PHY)和数据链路层(MAC)。<br>（2）网络层<br>　　通过互联协议将数据包封装成互联网数据包，并运行必要的路由算法。这里有4种互联协议。<br>　　(a)网际协议IP：负责在主机和网络之间的路径寻址和数据包路由。<br>　　(b)地址解析协议ARP：获得同一物理网络中的主机硬件地址。<br>　　(c)网际控制消息协议ICMP：发送消息，并报告有关数据包的传送错误。<br>　　(d)互联组管理协议IGMP：用来实现本地多路广播路由器报告。<br>（3）传输层：提供可靠端到端的传输（应用到应用）<br>　　传输协议在主机之间提供通信会话。传输协议的选择根据数据传输方式而定。主要有以下2种传输协议：<br>　　(a)传输控制协议TCP：为应用程序提供可靠的通信连接，适用于要求得到响应的应用程序。<br>　　(b)用户数据包协议UDP：提供无连接通信，且不对传输包进行可靠性确认。<br>（4）应用层<br>    应用程序通过这一层访问网络，主要包括常见的FTP、HTTP、DNS和TELNET协议。 </p>
-<h2 id="8-http的工作过程"><a href="#8-http的工作过程" class="headerlink" title="8 .http的工作过程"></a>8 .http的工作过程</h2><p>一次HTTP操作称为一个事务，其工作整个过程如下：<br>1 ) 地址解析<br>     如用客户端浏览器请求这个页面：<a href="http://localhost.com:8080/index.html" target="_blank" rel="noopener">http://localhost.com:8080/index.html</a><br>     从中分解出协议名、主机名、端口、对象路径等部分，对于我们的这个地址，解析得到的结果如下：<br>     协议名：http<br>     主机名：localhost.com<br>     端口：8080<br>     对象路径：/index.htm<br>      在这一步，需要域名系统DNS解析域名localhost.com,得主机的IP地址。</p>
-<p>2）封装HTTP请求数据包<br>把以上部分结合本机自己的信息，封装成一个HTTP请求数据包。</p>
-<p>3）封装成TCP包，建立TCP长连接（TCP的三次握手）<br>       在HTTP工作开始之前，客户机（Web浏览器）首先要通过网络与服务器建立连接，该连接是通过TCP来完成的，该协议与IP协议共同构建Internet，即著名的TCP/IP协议族，因此Internet又被称作是TCP/IP网络。HTTP是比TCP更高层次的应用层协议，根据规则，只有低层协议建立之后才能，才能进行更层协议的连接，因此，首先要建立TCP连接，一般TCP连接的端口号是80。这里是8080端口</p>
-<p>4）客户机发送请求命令<br>       建立连接后，客户机发送一个请求给服务器，请求方式的格式为：统一资源标识符（URL）、协议版本号，后边是MIME信息包括请求修饰符、客户机信息和可内容。</p>
-<p>5）服务器响应<br>     服务器接到请求后，给予相应的响应信息，其格式为一个状态行，包括信息的协议版本号、一个成功或错误的代码，后边是MIME信息包括服务器信息、实体信息和可能的内容。<br>        实体消息是服务器向浏览器发送头信息后，它会发送一个空白行来表示头信息的发送到此为结束，接着，它就以Content-Type应答头信息所描述的格式发送用户所请求的实际数据。</p>
-<p>6）服务器关闭TCP连接<br>     一般情况下，一旦Web服务器向浏览器发送了请求数据，它就要关闭TCP连接，然后如果浏览器或者服务器在其头信息加入了这行代码: Connection:keep-alive<br>   TCP连接在发送后将仍然保持打开状态，于是，浏览器可以继续通过相同的连接发送请求。保持连接节省了为每个请求建立新连接所需的时间，还节约了网络带宽。</p>
-<h2 id="9-http中GET和POST的区别"><a href="#9-http中GET和POST的区别" class="headerlink" title="9. http中GET和POST的区别"></a>9. http中GET和POST的区别</h2><p>1）get是从服务器上获取数据，post是向服务器传送数据。<br>2）get的参数键值对可以在URL中可以看到。Post是将表单内键值对放置在html的header中，用户看不到这些值。<br>3）get传送的数据量较小，不能大于2KB。post传送的数据量较大，一般被默认为不受限制。</p>
-<h2 id="10-http和https的区别"><a href="#10-http和https的区别" class="headerlink" title="10.    http和https的区别"></a>10.    http和https的区别</h2><p>1）https协议需要申请证书，一般免费证书较少，因而需要一定费用。<br>2）http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl（安全套接层）传输协议。<br>3）http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。<br>4）http的连接很简单且是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</p>
+        <div class="article-info info-on-right">
+          
+          
 
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" target="_blank" rel="noopener" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" target="_blank" rel="noopener" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" target="_blank" rel="noopener" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" target="_blank" rel="noopener" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;" target="_blank" rel="noopener"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/02/19/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86-1/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/06/09/%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%BA%BF%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          进程与线程
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/02/18/mysql%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-2/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">mysql学习笔记-2</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" target="_blank" rel="noopener" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#基础知识-1"><span class="toc-number">1.</span> <span class="toc-text">基础知识-1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-TCP的三次握手、四次挥手的过程"><span class="toc-number">1.1.</span> <span class="toc-text">1.    TCP的三次握手、四次挥手的过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-TCP传输为什么是可靠的？"><span class="toc-number">1.2.</span> <span class="toc-text">2. TCP传输为什么是可靠的？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-为什么TCP建立连接是三次，而断开连接要四次？"><span class="toc-number">1.3.</span> <span class="toc-text">3. 为什么TCP建立连接是三次，而断开连接要四次？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-TCP和UDP的区别"><span class="toc-number">1.4.</span> <span class="toc-text">4.    TCP和UDP的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-TCP-IP的分层模型以及网络层和运输层的主要作用："><span class="toc-number">1.5.</span> <span class="toc-text">5. TCP/IP的分层模型以及网络层和运输层的主要作用：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-TCP-IP的分层模型是哪几层？http协议对应的哪一层？传输层的上面-一层是什么？"><span class="toc-number">1.6.</span> <span class="toc-text">6. TCP/IP的分层模型是哪几层？http协议对应的哪一层？传输层的上面 一层是什么？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-TCP-IP协议栈"><span class="toc-number">1.7.</span> <span class="toc-text">7. TCP/IP协议栈</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-http的工作过程"><span class="toc-number">1.8.</span> <span class="toc-text">8 .http的工作过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-http中GET和POST的区别"><span class="toc-number">1.9.</span> <span class="toc-text">9. http中GET和POST的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#10-http和https的区别"><span class="toc-number">1.10.</span> <span class="toc-text">10.    http和https的区别</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -382,8 +223,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
